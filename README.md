@@ -35,10 +35,8 @@ az acr task create \
   --set-secret PASSWORD=$PASSWORD \
   --set CLUSTER_NAME=demo42-staging-eus \
   --set CLUSTER_RESOURCE_GROUP=demo42-staging-eus \
-  --set-secret REGISTRY_USR=$ACR_PULL_USR \
-  --set-secret REGISTRY_PWD=$ACR_PULL_PWD \
   --git-access-token ${GIT_TOKEN} \
-  --registry $ACR_NAME 
+  --registry $ACR_NAME
 
 az acr task create \
   -n demo42-queueworker \
@@ -71,7 +69,7 @@ az acr task create \
             --vault-name ${AKV_NAME} \
             --name demo42-git-token \
             --query value -o tsv) \
-  --registry $ACR_NAME 
+  --registry $ACR_NAME
 
 
 ```
